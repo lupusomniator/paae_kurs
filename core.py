@@ -1,4 +1,9 @@
-import numpy as np
+﻿import numpy as np
+
+'''
+Возможные функции принадлежности для нечетких моделей.
+Выбраны в соответствием заданием курсового проекта
+'''
 def mu1(x: float) -> float:
     if x<-0.75:
         return 1
@@ -24,12 +29,21 @@ def mu3(x: float) -> float:
         return 2*x-0.5
     return 1
 
+'''
+Методы генерации векторов f в соответствии с моделью, определенной
+на нечетком множестве
+'''
 def flin(x):
     return np.array([1, x])
     
 def fquad(x):
     return np.array([1, x, x**2])
 
+'''
+Класс содержит соответствия между нечеткими множествами и определенными в них
+функциями принадлежности.
+Позволяет строить общий вектор f.
+'''
 class fmaker:	
 	# Доступные для использования модели
     models_avlb = {'lin': flin,'quad':fquad}
@@ -44,7 +58,7 @@ class fmaker:
     
     def get_avlb_models(self):
         return self.models_avlb.keys()
-    
+
     def get_m(self):
         return len(self.make(1))
     

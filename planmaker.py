@@ -1,4 +1,4 @@
-import numpy as np
+﻿import numpy as np
 import scipy as sp
 import scipy.linalg as lng
 import scipy.optimize as opt
@@ -92,6 +92,17 @@ plan=[]
 m = 0
 Mep = 0
 f = 0
+'''
+fmake - объект класса fmaker (подробнее в определение класса)
+
+button - кнопка, на которой планируется выводить число итераций алгоритма
+
+iters_to_update - количество итераций алгоритма, которые должны пройти,
+чтобы на интерфейсе обновился счетчик
+
+threshold - расстояние между точками, которого достаточно, чтобы сказать,
+что точки можно считать одной точкой
+'''
 def make_plan(fmake: fmaker, button, precision: float = 1e-4,
               maxiter: int = 1000, iters_to_update: int = 10,
               threshold:float = 5e-2) -> list:

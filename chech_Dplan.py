@@ -3,7 +3,9 @@ import scipy.optimize as opt
 from core import fmaker
 import numpy as np
 import scipy.linalg as lng
-
+'''
+Вспомогательная проверка для проверки D-оптимальности плана
+'''
 def phi (x):
     global plan
     global f
